@@ -1,10 +1,20 @@
 ﻿namespace Test_2
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    Console.Write("A");
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.ReadKey();
         }
     }
 }
