@@ -13,7 +13,7 @@
         }
 
         /// <summary>
-        /// Отображение каждого n + 5 числа 
+        /// Отображение n + 5 числа 
         /// </summary>
         public static async Task AsyncValueCycleFive()
         {
@@ -26,7 +26,7 @@
         }
 
         /// <summary>
-        /// Отображение каждого n + 10 числа 
+        /// Отображение n + 10 числа
         /// </summary>
         public static async Task AsyncValueCycleTen()
         {
@@ -35,7 +35,7 @@
             {
                 Console.WriteLine($"Число b: {i}");
 
-                await Task.Delay(700);
+                await Task.Delay(501);
             }
         }
 
