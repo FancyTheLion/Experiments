@@ -6,19 +6,11 @@ using System;
 
 namespace Task_13
 {
-    public class BigCat
-    {
-        public string PantheraGenus { get; set; }
-        public string Predator { get; set; }
-        public int AverageLifeExpectancy { get; set; }
-    }
-
-
     public class Program
     {
         static void Main(string[] args)
         {
-            BigCat bigCat = new BigCat()
+            BigCats bigCat = new BigCats()
             {
                 PantheraGenus = "Лев",
                 Predator = "Хищное млекопитающее",
@@ -33,13 +25,17 @@ namespace Task_13
 
             string jsonStringBigCat = JsonSerializer.Serialize(bigCat, options);
 
+            File.WriteAllText(@"C:\Users\Fancy\Lessons\Experiments\Task-13\bigcats.json", jsonStringBigCat);
+
             Console.WriteLine(jsonStringBigCat);
 
-            BigCat restoredBigCat = JsonSerializer.Deserialize<BigCat>(jsonStringBigCat);
+            //BigCats restoredBigCat = JsonSerializer.Deserialize<BigCats>(jsonStringBigCat);
 
-            Console.WriteLine(restoredBigCat.PantheraGenus);
-            Console.WriteLine(restoredBigCat.Predator);
-            Console.WriteLine(restoredBigCat.AverageLifeExpectancy);
+            //Console.WriteLine(restoredBigCat.PantheraGenus);
+            //Console.WriteLine(restoredBigCat.Predator);
+            //Console.WriteLine(restoredBigCat.AverageLifeExpectancy);
+
+
 
             Console.ReadLine();
         }
