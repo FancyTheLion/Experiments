@@ -9,6 +9,8 @@
             {
                 Console.WriteLine(item);
             }
+
+            Console.ReadLine();
         }
 
         public static int[] GetFirstEvenNumbers(int count)
