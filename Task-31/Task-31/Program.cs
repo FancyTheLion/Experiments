@@ -11,11 +11,11 @@
             Console.ReadKey();
         }
 
-        public static double MaxIndex(double[] array)
+        public static int MaxIndex(double[] array)
         {
-            double maxI = 0;
+            int maxI = 0;
             double maxValue = double.MinValue;
-            double i = 0;
+            int i = 0;
             foreach (var item in array)
             {
                 if (item > maxValue)
