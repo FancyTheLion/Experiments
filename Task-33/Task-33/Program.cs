@@ -10,18 +10,25 @@
          Вопрос: что в методе EnteringArrayValue нужно возвращать. И нужно ли. (Ввод значений массива с консоли пользователем) */
         static void Main(string[] args) 
         {
-            //int[] argument1 = 
-            //int[] argument2 = 
+            var argument1 = EnterArray();
+            var argument2 = EnterArray();
 
+            Console.WriteLine("Индекс подмассива:");
             Console.WriteLine(FindSubarrayStartIndex(argument1, argument2));
 
+            Console.ReadLine();
         }
 
         public static int FindSubarrayStartIndex(int[] array, int[] subArray)
         {
             for (var i = 0; i < array.Length - subArray.Length + 1; i++)
+            {
                 if (ContainsAtIndex(array, subArray, i))
+                {
                     return i;
+                }
+            }
+
             return -1;
         }
 
@@ -29,16 +36,20 @@
         {
             for (int j = 0; j < subArray.Length; j++)
             {
-                if (array[i + j] != subArray[j]) return false;
+                if (array[i + j] != subArray[j])
+                {
+                    return false;
+                }
 	        }
+
 	        return true;
         }
 
         /// <summary>
-        /// Метод 
+        /// Метод ввода массива
         /// </summary>
         /// <returns></returns>
-        public static int EnteringArrayValue()
+        public static int[] EnterArray()
         {
             Console.WriteLine("Введите количество элементов массива:\t");
 
@@ -59,28 +70,7 @@
                 Console.WriteLine(myArray[i]);
             }
 
-            return myArray[i];
+            return myArray;
         }
-
-        //public static int EnterNumber(string numberName)
-        //{
-        //    Console.WriteLine($"Введите {numberName}:");
-
-        //    while (true)
-        //    {
-        //        string enteredString = Console.ReadLine();
-
-        //        int result;
-
-        //        bool isSuccess = int.TryParse(enteredString, out result);
-
-        //        if (isSuccess)
-        //        {
-        //            return result;
-        //        }
-
-        //        Console.WriteLine("Вы ввели не число, повторите ввод!");
-        //    }
-        //}
     }
 }
